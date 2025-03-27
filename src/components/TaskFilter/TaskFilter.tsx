@@ -1,7 +1,7 @@
 import styles from "./TaskFilter.module.css";
-import Button from "./../Button/Button";
 import { useState } from "react";
 import { TTaskFilter } from "../../types/task";
+import Button from "../Button/Button";
 
 interface TaskFilterProp {
     onChange: (filter: TTaskFilter) => void;

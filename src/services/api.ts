@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { IUser } from '../types/user';
 import { ITask } from '../types/task';
-import { ApiResponse, ApiError } from '../types/api';
+import { ApiError } from '../types/api';
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
 

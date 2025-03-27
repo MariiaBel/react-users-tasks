@@ -2,7 +2,7 @@
 
 Исполнитель: [Мария](https://t.me/MariiaBel)
 
-Demo: [GithubPage](https://mariiabel.github.io/ /dist)
+Demo: [GithubPage](https://mariiabel.github.io/react-users-tasks/dist)
 
 Использованные технологии: React • React Router • TS • JSONPlaceholder API • Axios • CSS • Vite
 

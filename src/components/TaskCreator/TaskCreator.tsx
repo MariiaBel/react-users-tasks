@@ -1,17 +1,17 @@
-import Button from "../Button/button";
+import Button from "../Button/Button";
 import styles from "./TaskCreator.module.css";
-import { useId, useState } from "react";
+import { useState } from "react";
 import { ITask } from "../../types/task";
 import { addTask } from "../../services/api";
 import { ApiError } from "../../types/api";
 
-interface TaskCreaterProps {
+interface TaskCreatorProps {
     onCreate: (task: ITask) => void;
     onError: (error: string) => void;
     userId?: string;
 }
 
-const TaskCreator = ({ userId, onCreate, onError }: TaskCreaterProps) => {
+const TaskCreator = ({ userId, onCreate, onError }: TaskCreatorProps) => {
     const [newTaskTitle, setNewTaskTitle] = useState<string>("");
 
     const handleAddTask = async (e: React.FormEvent) => {

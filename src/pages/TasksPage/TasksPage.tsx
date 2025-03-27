@@ -1,17 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
-import {
-    fetchUserTasks,
-    updateTaskStatus,
-    deleteTask,
-} from "../../services/api";
+import { fetchUserTasks } from "../../services/api";
 import TaskList from "../../components/TaskList/TaskList";
 import { ITask, TTaskFilter } from "../../types/task";
 import { ApiError } from "../../types/api";
-import Button from "../../components/Button/button";
+import Button from "../../components/Button/Button";
 import TaskFilter from "../../components/TaskFilter/TaskFilter";
 import TaskCreator from "../../components/TaskCreator/TaskCreator";
-import styles from "./TasksPage.module.css";
 
 const TasksPage = () => {
     const { userId } = useParams<{ userId: string }>();

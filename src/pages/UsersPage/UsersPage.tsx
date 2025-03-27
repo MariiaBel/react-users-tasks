@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { fetchUsers } from "../../services/api";
 import UserList from "../../components/UserList/UserList";
-import styles from "./UsersPage.module.css";
 import { IUser } from "../../types/user";
 import { ApiError } from "../../types/api";
 
