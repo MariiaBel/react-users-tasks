@@ -1,0 +1,6 @@
+.userList {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}

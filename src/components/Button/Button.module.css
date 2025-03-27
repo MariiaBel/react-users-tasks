@@ -1,0 +1,25 @@
+
+.btn {
+    padding: 10px 20px;
+    background-color: color-mix(in oklab,  rgb(var(--cl-secondary)), #ffffff 30%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: rgb(var(--cl-secondary));
+}
+
+.active {
+    background-color: rgb(var(--cl-accent));
+    color: white;
+    border-color: rgb(var(--cl-accent));
+}
+
+.btn.active:hover {
+    background-color: color-mix(in oklab,  rgb(var(--cl-accent)), #000000 20%);
+}

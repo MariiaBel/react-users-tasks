@@ -1,0 +1,45 @@
+.user {
+    display: block;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: inherit;
+    box-shadow: 0 3px 10px rgba(var(--cl-main), 0.2);
+    transition: all 0.3s ease;
+    border-left: 4px solid rgb(var(--cl-accent));
+    animation: fadeIn 0.5s ease-out forwards;
+    /* opacity: 0; */
+}
+
+.user:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(var(--cl-main), 0.3);
+    border-left-width: 6px;
+}
+
+.userName {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.user:hover .userName {
+    color: rgb(var(--cl-accent));
+}
+
+.userEmail {
+    font-size: 14px;
+    color: rgb(var(--cl-secondary));
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
