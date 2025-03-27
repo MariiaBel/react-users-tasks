@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchUserTasks } from "../../services/api";
 import TaskList from "../../components/TaskList/TaskList";
@@ -33,16 +33,6 @@ const TasksPage = () => {
         getTasks();
     }, [userId]);
 
-    const filteredTasks = useMemo(
-        () =>
-            tasks.filter((task) => {
-                if (filter === "completed") return task.completed;
-                if (filter === "active") return !task.completed;
-                return true;
-            }),
-        [tasks, filter]
-    );
-
     if (loading) return <div className="loading">Loading tasks...</div>;
     if (error) return <div className="error">Error: {error}</div>;
 
@@ -58,16 +48,14 @@ const TasksPage = () => {
 
             <TaskCreator
                 userId={userId}
-                onCreate={(newTask: ITask) =>
-                    setTasks([...tasks, { ...newTask, id: tasks.length + 1 }])
-                }
+                onCreate={(newTask: ITask) => setTasks([...tasks, newTask])}
                 onError={() => setError(error)}
             />
 
             <TaskList
                 tasks={tasks}
-                filteredTasks={filteredTasks}
-                onModifiedTask={(tasks: ITask[]) => setTasks([...tasks])}
+                filter={filter}
+                onModifiedTask={(tasks: ITask[]) => setTasks(tasks)}
                 onError={() => setError(error)}
             />
         </div>

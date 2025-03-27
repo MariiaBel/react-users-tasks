@@ -2,7 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: './'
+// console.log(import.meta.url)
+// process.env.NODE_ENV
+export default defineConfig(({ command }: any) => {
+  const isProduction = command === 'build';
+
+  return {
+    base: isProduction ? '/react-users-tasks/dist/' : '/',
+    plugins: [react()],
+  }
 })

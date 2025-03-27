@@ -3,8 +3,10 @@ import UsersPage from "./pages/UsersPage/UsersPage";
 import TasksPage from "./pages/TasksPage/TasksPage";
 
 function App() {
+    const basename = import.meta.env.PROD ? "/react-users-tasks/dist/" : "/";
+
     return (
-        <Router>
+        <Router basename={basename}>
             <Routes>
                 <Route path="/" element={<UsersPage />} />
                 <Route path="/tasks/:userId" element={<TasksPage />} />

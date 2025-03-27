@@ -14,6 +14,8 @@ interface TaskCreatorProps {
 const TaskCreator = ({ userId, onCreate, onError }: TaskCreatorProps) => {
     const [newTaskTitle, setNewTaskTitle] = useState<string>("");
 
+    const generateId = () => crypto.randomUUID();
+
     const handleAddTask = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!newTaskTitle.trim() || !userId) return;
@@ -26,7 +28,7 @@ const TaskCreator = ({ userId, onCreate, onError }: TaskCreatorProps) => {
             };
 
             const addedTask = await addTask(newTask);
-            onCreate({ ...addedTask });
+            onCreate({ ...addedTask, id: generateId() });
             setNewTaskTitle("");
         } catch (err) {
             const apiError = err as ApiError;

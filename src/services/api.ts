@@ -38,7 +38,7 @@ export const addTask = async (task: Omit<ITask, 'id'>): Promise<ITask> => {
 };
 
 export const updateTaskStatus = async (
-    taskId: number,
+    taskId: number | string,
     completed: boolean
 ): Promise<ITask> => {
     try {
@@ -52,7 +52,7 @@ export const updateTaskStatus = async (
     }
 };
 
-export const deleteTask = async (taskId: number): Promise<void> => {
+export const deleteTask = async (taskId: number | string): Promise<void> => {
     try {
         await axios.delete(`${API_URL}/todos/${taskId}`);
     } catch (error) {

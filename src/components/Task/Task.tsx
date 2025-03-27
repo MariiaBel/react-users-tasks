@@ -3,8 +3,8 @@ import { ITask } from "../../types/task";
 
 interface TaskProps {
     task: ITask;
-    onToggleStatus: (taskId: number, completed: boolean) => void;
-    onDelete: (taskId: number) => void;
+    onToggleStatus: (taskId: number | string, completed: boolean) => void;
+    onDelete: (taskId: number | string) => void;
     className?: string;
 }
 
